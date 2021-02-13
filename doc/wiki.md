@@ -65,4 +65,9 @@
 - Composer(PHP パッケージ管理ツール)
 - Node.js(JS ミドルウェア)
 
+## run and check
+
+- http://localhost:8888/path
+- http://127.0.0.1:8888/path
+
 ### [Return to Contents](#contents)
