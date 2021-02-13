@@ -73,6 +73,29 @@ echo "<pre>";
 var_dump($array_member_2);
 echo "</pre>";
 
+/* if */
+echo("<br>");
+$height_2 = 90;
+if ($height_2 == 90) {
+    echo "Height is " . $height_2 . "cm.";
+}
+
+/* forEach */
+echo ("<br>");
+$member = [
+    "name" => "honda",
+    "height" => 170,
+    "hobby" => "soccer",
+];
+foreach($member as $i) {
+    /* value only */
+    echo($i);
+};
+foreach($member as $key => $value) {
+    echo("<br>");
+    echo("key" . $key . "is" . $value . ".");
+}
+
 /* php's infometion */
 phpinfo();
 ?>
