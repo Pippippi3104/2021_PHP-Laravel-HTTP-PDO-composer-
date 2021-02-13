@@ -26,6 +26,53 @@ $test_2 = 456;
 $test_3 = $test_1 + $test_2;
 echo $test_3;
 
+/* const */
+echo("<br>");
+const MAX = 10;
+echo MAX;
+
+/* array */
+echo("<br>");
+$array = [1, 2, 3];
+echo $array[1];
+echo "<pre>";
+var_dump($array);
+echo "</pre>";
+
+$array_2 = [
+    ["red", "blue", "yellow"],
+    ["green", "purple", "black"]
+];
+echo "<pre>";
+var_dump($array_2);
+echo "</pre>";
+
+/* 連想配列 */
+echo("<br>");
+$array_member = [
+    "name" => "honda",
+    "height" => 170,
+    "hobby" => "soccer",
+];
+echo "<pre>";
+var_dump($array_member);
+echo "</pre>";
+echo $array_member["hobby"];
+
+$array_member_2 = [
+    "honda" => [
+        "height" => 170,
+        "hobby" => "soccer",
+    ],
+    "kagawa" => [
+        "height" => 165,
+        "hobby" => "soccer",
+    ],
+];
+echo "<pre>";
+var_dump($array_member_2);
+echo "</pre>";
+
 /* php's infometion */
 phpinfo();
 ?>
