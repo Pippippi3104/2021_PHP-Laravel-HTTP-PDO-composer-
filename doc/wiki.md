@@ -70,4 +70,11 @@
 - http://localhost:8888/path
 - http://127.0.0.1:8888/path
 
+## Rules
+
+- 文字の先頭は英文字かアンダーバー
+- add
+  - . -> 文字を横に合わせる
+  - - -> 数字を足す
+
 ### [Return to Contents](#contents)
