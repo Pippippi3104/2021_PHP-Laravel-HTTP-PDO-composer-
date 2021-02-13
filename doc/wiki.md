@@ -47,4 +47,22 @@
 - Codelgniter
 - FuelPHP
 
+## 開発環境を作る(PHP)
+
+- XAMPP(win) / MAMP(mac)
+  - Apache
+  - MySQL(MariaDB)
+  - PHP(over 7.2)
+- Google Chrome(ブラウザ)
+- VScode(エディタ)
+
+## 開発環境を作る(Laravel)
+
+- XAMPP(win) / MAMP(mac)
+  - Apache
+  - MySQL(MariaDB)
+  - PHP(over 7.2)
+- Composer(PHP パッケージ管理ツール)
+- Node.js(JS ミドルウェア)
+
 ### [Return to Contents](#contents)
