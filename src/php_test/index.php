@@ -94,6 +94,44 @@ foreach($member as $i) {
 foreach($member as $key => $value) {
     echo("<br>");
     echo("key" . $key . "is" . $value . ".");
+};
+
+/* for */
+echo ("<br>");
+for ($i = 0; $i < 10; $i++) {
+    if($i === 5){
+        break;
+        // continue
+    }
+
+    echo ("<br>");
+    echo($i);
+};
+
+/* while */
+echo ("<br>");
+$i = 0;
+while($i < 5){
+    echo ("<br>");
+    echo($i);
+    $i++;
+};
+
+/* switch */
+echo ("<br>");
+$data = 1;
+switch($data){
+    case 1:
+        echo($data);
+    break;
+    case 2:
+        echo($data);
+    break;
+    case 3:
+        echo($data);
+    break;
+    default:
+        echo("default");
 }
 
 /* php's infometion */
