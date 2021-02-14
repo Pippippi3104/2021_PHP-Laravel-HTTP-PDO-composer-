@@ -157,4 +157,9 @@
     - http header
     - データ本体
 
+## error detection
+
+- check here and fix display_errors off -> on
+  - /Applications/MAMP/bin/php/php7.4.12/conf/php.ini
+
 ### [Return to Contents](#contents)
