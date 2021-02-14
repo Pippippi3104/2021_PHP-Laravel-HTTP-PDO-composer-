@@ -167,4 +167,33 @@
 - 連想配列
 - PHP では 9 種類存在する
 
+## 代表的な攻撃と対策
+
+- 攻撃
+  - XSS(Cross Site Scripting)
+    - 例）
+      """
+      <script>alert("attention, you are being attacked now!");</script>
+      """
+  - クリックジャッキング
+    - 悪意のあるボタンが出現
+  - CSRF(Cross Site Request Forgeries)
+  - SQL インジェクション -> DB 時
+  - etc...
+- 対策
+  - サニタイジング(消毒)
+    - 例)(XSS 対策)
+      """
+      function h($str)
+      {
+        return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
+      }
+      """
+    - 例)(クリックジャッキング)
+      - 重ねた表示を禁止にする
+        """
+        header("X-FRAME-OPTIONS:DENY");
+        """
+  - バリデーション(検証)
+
 ### [Return to Contents](#contents)
