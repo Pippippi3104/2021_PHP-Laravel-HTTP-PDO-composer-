@@ -162,4 +162,9 @@
 - check here and fix display_errors off -> on
   - /Applications/MAMP/bin/php/php7.4.12/conf/php.ini
 
+## スパーグローバル変数
+
+- 連想配列
+- PHP では 9 種類存在する
+
 ### [Return to Contents](#contents)
