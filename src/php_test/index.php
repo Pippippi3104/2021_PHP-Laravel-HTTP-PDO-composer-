@@ -134,6 +134,19 @@ switch($data){
         echo("default");
 }
 
+/* functions */
+echo ("<br>");
+function test() {
+    echo("this is test.");
+};
+test();
+
+echo ("<br>");
+function getComment($string) {
+    echo($string);
+};
+getComment("this is test.");
+
 /* php's infometion */
 phpinfo();
 ?>
