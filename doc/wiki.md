@@ -3,6 +3,7 @@
 # Contents
 
 - [Section01](#Section01)
+- [Section02](#Section02)
 
 <a id="Section01"></a>
 
@@ -124,5 +125,46 @@
   - - -> 数字を足す
 - <"pre"></"pre">
   - 縦に並んで見やすくなる
+
+### [Return to Contents](#contents)
+
+<a id="Section02"></a>
+
+# Section02
+
+## web 通信
+
+- http and https
+  - http
+    - Hyper Text Transfer Protocol(ルール)
+  - https
+    - SSL(Secure Socket Layer)
+    - 暗号化
+    - ドメイン毎に認証
+- request and response
+  - request
+    - http リクエスト行(method)
+      - get
+        - URL に表示される
+          - 検索条件など
+        - クエリーリクエスト
+      - post
+        - 見られてはいけない NG なデータなど
+    - http header
+    - データ本体
+  - response
+    - レスポンス状態行(状態コード)
+    - http header
+    - データ本体
+
+## error detection
+
+- check here and fix display_errors off -> on
+  - /Applications/MAMP/bin/php/php7.4.12/conf/php.ini
+
+## スパーグローバル変数
+
+- 連想配列
+- PHP では 9 種類存在する
 
 ### [Return to Contents](#contents)
