@@ -147,6 +147,13 @@ function getComment($string) {
 };
 getComment("this is test.");
 
+/* require */
+echo("<br>");
+require "common.php";
+echo $commonVariable;
+echo("<br>");
+commonText();
+
 /* php's infometion */
 phpinfo();
 ?>
