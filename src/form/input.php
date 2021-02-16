@@ -1,15 +1,17 @@
 <?php
 
+/* CSRF対策 */
+session_start();
+
 /* サニタイジング(クリックジャッキング) */
 header("X-FRAME-OPTIONS:DENY");
 
 /* super global variable */
-// if (!empty($_POST["your_name"])){
-//     //echo $_GET["your_name"];
-//     echo "<pre>";
-//     var_dump($_POST);
-//     echo "</pre>";
-// };
+if (!empty($_SESSION)){
+    echo "<pre>";
+    var_dump($_SESSION);
+    echo "</pre>";
+};
 
 /* サニタイジング(XSS) */
 function h($str)
@@ -36,6 +38,10 @@ if(!empty($_POST["btn_submit"])){
 
 <!-- 確認画面 -->
 <?php if($pageFlag === 1) : ?>
+<?php 
+/* csrf対策 */
+if($_POST["csrf"] === $_SESSION["csrfToken"]) :
+?>
 <form method="POST" action="input.php">
 氏名
 <?php echo h($_POST["your_name"]); ?>
@@ -47,14 +53,30 @@ if(!empty($_POST["btn_submit"])){
 <input type="submit" name="btn_submit" value="送信する">
 <input type="hidden" name="your_name" value="<?php echo h($_POST["your_name"]); ?>">
 <input type="hidden" name="email" value="<?php echo h($_POST["email"]); ?>">
+<input type="hidden" name="csrf" value="<?php echo h($_POST["csrf"]); ?>">
+<?php endif; ?>
 <?php endif; ?>
 
 <!-- 完了画面 -->
 <?php if($pageFlag === 2) : ?>
+<?php 
+/* csrf対策 */
+if($_POST["csrf"] === $_SESSION["csrfToken"]) :
+?>
 送信が完了しました
+<?php unset($_SESSION["csrfToken"]); ?>
+<?php endif; ?>
 <?php endif; ?>
 
 <!-- 入力画面 -->
+<?php
+/* CSRF対策用合言葉 */
+if(!isset($_SESSION["csrfToken"])){
+  $_csrfToken = bin2hex(random_bytes(32));
+  $_SESSION["csrfToken"] = $_csrfToken;
+};
+$token = $_SESSION["csrfToken"];
+?>
 <?php if($pageFlag === 0) : ?>
 <form method="POST" action="input.php">
 氏名
@@ -64,6 +86,7 @@ if(!empty($_POST["btn_submit"])){
 <input type="email" name="email" value="<?php if(!empty($_POST["email"])){echo h($_POST["email"]);}; ?>">
 <br>
 <input type="submit" name="btn_confirm" value="確認する">
+<input type="hidden" name="csrf" value="<?php echo $token ?>">
 </form>
 <?php endif; ?>
 

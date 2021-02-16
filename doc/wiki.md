@@ -195,5 +195,9 @@
         header("X-FRAME-OPTIONS:DENY");
         """
   - バリデーション(検証)
+  - その他
+    - 例)(CSRF)
+      - GET/POST: 一回きり
+      - SESSION: トークンを残す
 
 ### [Return to Contents](#contents)
