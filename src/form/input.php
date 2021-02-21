@@ -85,6 +85,32 @@ $token = $_SESSION["csrfToken"];
 メールアドレス
 <input type="email" name="email" value="<?php if(!empty($_POST["email"])){echo h($_POST["email"]);}; ?>">
 <br>
+ホームページ
+<input type="url" name="url" value="<?php if(!empty($_POST["url"])){echo h($_POST["url"]);}; ?>">
+<br>
+性別
+<input type="radio" name="gender" value="0">男性
+<input type="radio" name="gender" value="1">女性
+<br>
+年齢
+<select name="age">
+  <option value="">選択してください</optiuon>
+  <option value="1">〜19歳</optiuon>
+  <option value="2">20歳〜29歳</optiuon>
+  <option value="3">30歳〜39歳</optiuon>
+  <option value="4">40歳〜49歳</optiuon>
+  <option value="5">50歳〜59歳</optiuon>
+  <option value="6">60歳〜</optiuon>
+</select>
+<br>
+お問い合わせ内容
+<textarea name="contact">
+<?php if(!empty($_POST["contact"])){echo h($_POST["contact"]);}; ?>
+</textarea>
+<br>
+<input type="checkbox" name="caution" value="1">注意事項にチェックする
+<br>
+
 <input type="submit" name="btn_confirm" value="確認する">
 <input type="hidden" name="csrf" value="<?php echo $token ?>">
 </form>
