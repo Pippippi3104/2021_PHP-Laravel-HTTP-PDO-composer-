@@ -43,9 +43,8 @@ if (!empty($_POST['btn_submit'])) {
 
 <!-- 確認画面 -->
 <?php if ($pageFlag === 1): ?>
- /* csrf対策 */<?php
-    /* csrf対策 */
-    ?>if ($_POST['csrf'] === $_SESSION['csrfToken']): ?>
+<!-- csrf対策 -->
+ <?php if ($_POST['csrf'] === $_SESSION['csrfToken']): ?>
 <form method="POST" action="input.php">
 氏名
 <?php echo h($_POST['your_name']); ?>
@@ -104,15 +103,16 @@ if ($_POST['age'] === '6') {
 <input type="hidden" name="contact" value="<?php echo h($_POST['contact']); ?>">
 <input type="hidden" name="csrf" value="<?php echo h($_POST['csrf']); ?>">
 <?php endif; ?>
+<?php endif; ?>
 
 
 <!-- 完了画面 -->
 <?php if ($pageFlag === 2): ?>
- /* csrf対策 */<?php
-    /* csrf対策 */
-    ?>if ($_POST['csrf'] === $_SESSION['csrfToken']): ?>
+<!-- csrf対策 -->
+<?php if ($_POST['csrf'] === $_SESSION['csrfToken']): ?>
 送信が完了しました
 <?php unset($_SESSION['csrfToken']); ?>
+<?php endif; ?>
 <?php endif; ?>
 
 
