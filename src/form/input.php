@@ -3,6 +3,9 @@
 /* CSRF対策 */
 session_start();
 
+/* validation (入力エラーなど) */
+require "validation.php";
+
 /* サニタイジング(クリックジャッキング) */
 header("X-FRAME-OPTIONS:DENY");
 
@@ -23,7 +26,8 @@ function h($str)
 /* 入力、確認、完了：input.php, confirm.php, thanks.php */
 /* 今回は "input.php" のみで表現する */
 $pageFlag = 0;
-if(!empty($_POST["btn_confirm"])){
+$errors = validation($_POST);
+if(!empty($_POST["btn_confirm"]) && empty($errors)){
     $pageFlag = 1;
 };
 if(!empty($_POST["btn_submit"])){
@@ -109,6 +113,18 @@ if(!isset($_SESSION["csrfToken"])){
 $token = $_SESSION["csrfToken"];
 ?>
 <?php if($pageFlag === 0) : ?>
+
+<!-- validation error -->
+<?php if(!empty($errors) && !empty($_POST["btn_confirm"])) : ?>
+<?php echo "<ul>"; ?>
+<?php
+ foreach($errors as $error){
+     echo "<li>" . $error . "</li>";
+ }
+?>
+<?php echo "</ul>"; ?>
+<?php endif; ?>
+
 <form method="POST" action="input.php">
 氏名
 <input type="text" name="your_name" value="<?php if(!empty($_POST["your_name"])){echo h($_POST["your_name"]);}; ?>">
