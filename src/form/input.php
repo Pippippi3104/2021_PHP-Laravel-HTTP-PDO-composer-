@@ -148,40 +148,49 @@ if ($_POST['age'] === '6') {
 <div class ="container">
   <div class="row">
     <div class="col-md-6">
-    <form method="POST" action="input.php">
-    <div class="form-group">
-      <label for="your_name">氏名</label>
-      <input type="text" class="form-control" id="your_name" name="your_name" value="<?php if (
-        !empty($_POST['your_name'])
-      ) {
-        echo h($_POST['your_name']);
-      } ?>" required>
-    </div>
+      <form method="POST" action="input.php">
+      <div class="form-group">
+        <label for="your_name">氏名</label>
+        <input type="text" class="form-control" id="your_name" name="your_name" value="<?php if (
+          !empty($_POST['your_name'])
+        ) {
+          echo h($_POST['your_name']);
+        } ?>" required>
+      </div>
+      <div>
+        <label for="email">メールアドレス</label>
+        <input type="email" class="form-control" id="email" name="email" value="<?php if (
+          !empty($_POST['email'])
+        ) {
+          echo h($_POST['email']);
+        } ?>" required>
+      </div>
+      <div>
+        <label for="email">ホームページ</label>
+        <input type="url" class="form-control" id="url" name="url" value="<?php if (
+          !empty($_POST['url'])
+        ) {
+          echo h($_POST['url']);
+        } ?>">
+      </div>
+      性別：
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="gender1" name="gender" value="0"
+        <?php if (!empty($_POST['gender']) && $_POST['geder'] === '0') {
+          echo 'checked';
+        } ?>>
+          <label class="form-check-label" for="gender1">男性</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="gender2" name="gender" value="1"
+        <?php if (!empty($_POST['gender']) && $_POST['geder'] === '1') {
+          echo 'checked';
+        } ?>>
+          <label class="form-check-label" for="gender2">女性</label>
+      </div>
     </div>
   </div>
 </div>
-メールアドレス
-<input type="email" name="email" value="<?php if (!empty($_POST['email'])) {
-  echo h($_POST['email']);
-} ?>">
-<br>
-ホームページ
-<input type="url" name="url" value="<?php if (!empty($_POST['url'])) {
-  echo h($_POST['url']);
-} ?>">
-<br>
-性別
-<input type="radio" name="gender" value="0"
-<?php if (!empty($_POST['gender']) && $_POST['geder'] === '0') {
-  echo 'checked';
-} ?>
->男性
-<input type="radio" name="gender" value="1"
-<?php if (!empty($_POST['gender']) && $_POST['geder'] === '1') {
-  echo 'checked';
-} ?>
->女性
-<br>
 年齢
 <select name="age">
   <option value="">選択してください</optiuon>
