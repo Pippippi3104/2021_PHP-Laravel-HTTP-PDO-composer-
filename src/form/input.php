@@ -188,35 +188,39 @@ if ($_POST['age'] === '6') {
         } ?>>
           <label class="form-check-label" for="gender2">女性</label>
       </div>
-    </div>
+      <div class="form-group">
+        <label for="age">年齢</label>
+        <select class="form-control" id="age" name="age">
+          <option value="">選択してください</optiuon>
+          <option value="1" selected>〜19歳</optiuon>
+          <option value="2">20歳〜29歳</optiuon>
+          <option value="3">30歳〜39歳</optiuon>
+          <option value="4">40歳〜49歳</optiuon>
+          <option value="5">50歳〜59歳</optiuon>
+          <option value="6">60歳〜</optiuon>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="contact">お問い合わせ内容</label>
+        <textarea class="form-control" id="contact" row="3" name="contact">
+        <?php if (!empty($_POST['contact'])) {
+          echo h($_POST['contact']);
+        } ?>
+        </textarea>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="caution" name="caution" value="1">
+        <label class="form-check-label" for="caution">注意事項にチェックする</label>
+      </div>
+
+      <input type="submit" class="btn btn-info" name="btn_confirm" value="確認する">
+      <input type="hidden" name="csrf" value="<?php echo $token; ?>">
+      </form>
+    </div><!-- .col-md-6 -->
   </div>
 </div>
-年齢
-<select name="age">
-  <option value="">選択してください</optiuon>
-  <option value="1" selected>〜19歳</optiuon>
-  <option value="2">20歳〜29歳</optiuon>
-  <option value="3">30歳〜39歳</optiuon>
-  <option value="4">40歳〜49歳</optiuon>
-  <option value="5">50歳〜59歳</optiuon>
-  <option value="6">60歳〜</optiuon>
-</select>
-<br>
-お問い合わせ内容
-<textarea name="contact">
-<?php if (!empty($_POST['contact'])) {
-  echo h($_POST['contact']);
-} ?>
-</textarea>
-<br>
-<input type="checkbox" name="caution" value="1">注意事項にチェックする
-<br>
 
-<input type="submit" name="btn_confirm" value="確認する">
-<input type="hidden" name="csrf" value="<?php echo $token; ?>">
-</form>
 <?php endif; ?>
-
 
 <!-- Bootstrap -->
 <!-- Optional JavaScript; choose one of the two! -->
