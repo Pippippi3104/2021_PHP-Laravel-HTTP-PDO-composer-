@@ -200,4 +200,13 @@
       - GET/POST: 一回きり
       - SESSION: トークンを残す
 
+## Bootstrap
+
+- CSS フレームワーク
+  - レイアウト、デザインがセットになっている
+  - CSS + jQuery(JS)
+- グリッドシステムが特徴
+  - 画面を 12 分割で考え、画面幅によって表示を変える
+- [Started Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)
+
 ### [Return to Contents](#contents)
