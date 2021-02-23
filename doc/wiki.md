@@ -282,4 +282,22 @@
   - インデックス(索引)
   - レプリケーション(ミラーリング) etc...
 
+## クラス
+
+- クラスの考え方(ひとまとめ)
+  - class
+    - prop
+      - 変数
+      - 定数
+    - method
+      - 関数
+- クラスの使い方(instance(実体化)の差)
+  - new(動的&アロー演算子)
+    - $pdo = new class
+    - $pdo -> prop
+    - $pdo -> method
+  - static(静的&スコープ演算子)
+    - PDO::ATTR_ERRMODE
+    - PDO::ERRMODE_EXCEPTION
+
 ### [Return to Contents](#contents)
