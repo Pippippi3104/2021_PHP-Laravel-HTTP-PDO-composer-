@@ -4,6 +4,7 @@
 
 - [Section01](#Section01)
 - [Section02](#Section02)
+- [Section03](#Section03)
 
 <a id="Section01"></a>
 
@@ -246,5 +247,39 @@
       - fclose: 閉じる/ロック解除
   - オブジェクト型(オブジェクトとして)
     - SplFileObject
+
+### [Return to Contents](#contents)
+
+<a id="Section03"></a>
+
+# Section03
+
+## データベースとの接続
+
+- PDO(PHP Data Object)
+- ORM, OR/マッパー
+  - SQL をラップ(SQL を PHP で書ける)
+
+## DB 操作の基本 CRUD
+
+- CRUD
+  - Create
+    - 新規作成
+    - insert
+  - Read
+    - 表示
+    - select
+  - Update
+    - 更新
+    - update(上書き)
+      - 履歴を残すか、完全に上書きするか
+  - Delete
+    - 削除
+    - delete
+      - 完全に消すか、非表示にするか
+- データ量が膨大になる場合
+  - パーティション(分割)
+  - インデックス(索引)
+  - レプリケーション(ミラーリング) etc...
 
 ### [Return to Contents](#contents)
