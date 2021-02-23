@@ -3,6 +3,7 @@
 # Contents
 
 - [Section01](#Section01)
+- [Section02](#Section02)
 
 <a id="Section01"></a>
 
@@ -124,5 +125,126 @@
   - - -> 数字を足す
 - <"pre"></"pre">
   - 縦に並んで見やすくなる
+
+### [Return to Contents](#contents)
+
+<a id="Section02"></a>
+
+# Section02
+
+## web 通信
+
+- http and https
+  - http
+    - Hyper Text Transfer Protocol(ルール)
+  - https
+    - SSL(Secure Socket Layer)
+    - 暗号化
+    - ドメイン毎に認証
+- request and response
+  - request
+    - http リクエスト行(method)
+      - get
+        - URL に表示される
+          - 検索条件など
+        - クエリーリクエスト
+      - post
+        - 見られてはいけない NG なデータなど
+    - http header
+    - データ本体
+  - response
+    - レスポンス状態行(状態コード)
+    - http header
+    - データ本体
+
+## error detection
+
+- check here and fix display_errors off -> on
+  - /Applications/MAMP/bin/php/php7.4.12/conf/php.ini
+
+## スパーグローバル変数
+
+- 連想配列
+- PHP では 9 種類存在する
+
+## 代表的な攻撃と対策
+
+- 攻撃
+  - XSS(Cross Site Scripting)
+    - 例）
+      """
+      <script>alert("attention, you are being attacked now!");</script>
+      """
+  - クリックジャッキング
+    - 悪意のあるボタンが出現
+  - CSRF(Cross Site Request Forgeries)
+  - SQL インジェクション -> DB 時
+  - etc...
+- 対策
+  - サニタイジング(消毒)
+    - 例)(XSS 対策)
+      """
+      function h($str)
+      {
+        return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
+      }
+      """
+    - 例)(クリックジャッキング)
+      - 重ねた表示を禁止にする
+        """
+        header("X-FRAME-OPTIONS:DENY");
+        """
+  - バリデーション(検証)
+  - その他
+    - 例)(CSRF)
+      - GET/POST: 一回きり
+      - SESSION: トークンを残す
+
+## Bootstrap
+
+- CSS フレームワーク
+  - レイアウト、デザインがセットになっている
+  - CSS + jQuery(JS)
+- グリッドシステムが特徴
+  - 画面を 12 分割で考え、画面幅によって表示を変える
+- [Started Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)
+
+## 認証・・フレームワーク推奨
+
+- 種類
+  - Basic 認証 SSL/TSL 推奨
+    - htaccess ファイルで指定
+      - サーバー(Apache)の設定ファイル
+    - ディレクトリごとに動作を制御できる
+      - リダイレクト
+      - アクセス切り替え(PC 版とスマホ版など)
+      - 特定 IP アドレス・プロバイダからアクセス制御
+      - Basic 認証 etc...
+  - ダイジェスト認証
+  - セッション認証
+  - データベースを使った認証
+  - JWT(Json Web Token)認証
+  - OAuth2.0 認証(SNS 認証)
+  - 2 段階認証(多要素認証)
+
+## ファイル操作
+
+- データを保存する方法
+  - ファイル(テキストファイル)
+    - 手軽・データのやり取り
+  - データベース(MySQL, MariaDB)
+    - 大量のデータを保管
+- ファイル操作の方法
+  - ファイル名型(ファイル丸ごと)
+    - file_get_contents, file_put_contents
+  - ストリーム型(1 行ごと)
+    - fopen, fclose, fgets, fwrite
+    - 手順
+      - fopen: 開く
+      - flock: 排他ロック
+      - fgets/fwrite: 読み込み/書き込み/追記
+      - fclose: 閉じる/ロック解除
+  - オブジェクト型(オブジェクトとして)
+    - SplFileObject
 
 ### [Return to Contents](#contents)
