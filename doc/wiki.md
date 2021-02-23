@@ -209,4 +209,22 @@
   - 画面を 12 分割で考え、画面幅によって表示を変える
 - [Started Template](https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)
 
+## 認証・・フレームワーク推奨
+
+- 種類
+  - Basic 認証 SSL/TSL 推奨
+    - htaccess ファイルで指定
+      - サーバー(Apache)の設定ファイル
+    - ディレクトリごとに動作を制御できる
+      - リダイレクト
+      - アクセス切り替え(PC 版とスマホ版など)
+      - 特定 IP アドレス・プロバイダからアクセス制御
+      - Basic 認証 etc...
+  - ダイジェスト認証
+  - セッション認証
+  - データベースを使った認証
+  - JWT(Json Web Token)認証
+  - OAuth2.0 認証(SNS 認証)
+  - 2 段階認証(多要素認証)
+
 ### [Return to Contents](#contents)
