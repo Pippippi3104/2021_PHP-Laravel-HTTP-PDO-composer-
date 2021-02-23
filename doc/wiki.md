@@ -227,4 +227,19 @@
   - OAuth2.0 認証(SNS 認証)
   - 2 段階認証(多要素認証)
 
+## ファイル操作
+
+- データを保存する方法
+  - ファイル(テキストファイル)
+    - 手軽・データのやり取り
+  - データベース(MySQL, MariaDB)
+    - 大量のデータを保管
+- ファイル操作の方法
+  - ファイル名型(ファイル丸ごと)
+    - file_get_contents, file_put_contents
+  - ストリーム型(1 行ごと)
+    - fopen, fclose, fgets, fwrite
+  - オブジェクト型(オブジェクトとして)
+    - SplFileObject
+
 ### [Return to Contents](#contents)
