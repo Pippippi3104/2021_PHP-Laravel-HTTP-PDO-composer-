@@ -239,6 +239,11 @@
     - file_get_contents, file_put_contents
   - ストリーム型(1 行ごと)
     - fopen, fclose, fgets, fwrite
+    - 手順
+      - fopen: 開く
+      - flock: 排他ロック
+      - fgets/fwrite: 読み込み/書き込み/追記
+      - fclose: 閉じる/ロック解除
   - オブジェクト型(オブジェクトとして)
     - SplFileObject
 
