@@ -5,6 +5,7 @@
 - [Section01](#Section01)
 - [Section02](#Section02)
 - [Section03](#Section03)
+- [Section04](#Section04)
 
 <a id="Section01"></a>
 
@@ -299,5 +300,27 @@
   - static(静的&スコープ演算子)
     - PDO::ATTR_ERRMODE
     - PDO::ERRMODE_EXCEPTION
+
+### [Return to Contents](#contents)
+
+<a id="Section04"></a>
+
+# Section04
+
+## クッキーとセッション
+
+- $\_COOKIE
+  - パスワード保存は NG
+  - 近年 GDPR(ヨーロッパ)などで利用が制限されつつある
+- $\_SESSION
+  - セッション認証
+
+## 関数あれこれ
+
+- 引数にデフォルト値（初期値）を設定可能
+- タイプヒンティング（型を明示できる）
+- 可変引数（ドット３つ）
+- 無名関数、クロージャ、コールバック関数
+- 引数にインスタンス（メソッドチェーン）
 
 ### [Return to Contents](#contents)
